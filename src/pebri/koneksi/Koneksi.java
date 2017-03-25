@@ -23,7 +23,7 @@ public class Koneksi {
     public static Connection getKoneksi() throws SQLException {
         if(koneksi == null) {
             try {
-                String url = "jdbc:mysql://localhost/dede";
+                String url = "jdbc:mysql://localhost/learn_java";
                 String username= "root";
                 String password= "";
                 
