@@ -40,7 +40,7 @@ public class KaryawanImplement implements KaryawanIntrface{
 
     @Override
     public void update(KaryawanEntity karyawanEntity) throws SQLException {
-        PreparedStatement preparedStatement = Koneksi.getKoneksi().prepareStatement("update karyawan_tb set kode_karyawan = ?, nama_karyawan = ?, alamat_karyawan = ?, nama_toko = ?, password = ? where id_karyawan = ?");
+        PreparedStatement preparedStatement = Koneksi.getKoneksi().prepareStatement("update karyawan_tb set kode_karyawan = ?, nama_karyawan = ?, alamat_karyawan = ?, id_toko = ?, password = ? where id_karyawan = ?");
         preparedStatement.setInt(6, karyawanEntity.getId_karyawan());
         preparedStatement.setString(1, karyawanEntity.getKode_karyawan());
         preparedStatement.setString(2, karyawanEntity.getNama_karyawan());
@@ -53,7 +53,7 @@ public class KaryawanImplement implements KaryawanIntrface{
 
     @Override
     public void delete(int idKaryawan) throws SQLException {
-        PreparedStatement preparedStatement = Koneksi.getKoneksi().prepareStatement("delete from karyawan_tb where id_karyawan ?");
+        PreparedStatement preparedStatement = Koneksi.getKoneksi().prepareStatement("delete from karyawan_tb where id_karyawan = ?");
         preparedStatement.setInt(1, idKaryawan);
 
         preparedStatement.executeUpdate();
